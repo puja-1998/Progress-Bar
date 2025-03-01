@@ -1,25 +1,44 @@
-import logo from './logo.svg';
+
+import { useEffect, useState } from 'react';
 import './App.css';
 
 function App() {
+  const[progress, setProgress] = useState(0);
+
+  const fillStyle={
+    width:`${progress}%`,
+    background:"#00C251",
+  };
+ 
+
+  useEffect(()=>{
+    if(progress < 100){
+      const timer = setInterval(()=>{
+        setProgress((prev) => Math.min(prev + 1, 100));
+      }, 500);
+      return () => clearInterval(timer);
+    }
+  }, [progress]);
+
   return (
+    
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+      <header className="App-header" >
+        <h1 >Progress Bar</h1>
       </header>
-    </div>
+
+      {/* Progress Bar */}
+
+      <div className='progress-bar'>
+        <div className='fill-bar' style={fillStyle}></div>
+        <span className="progress-text">{progress}%</span>
+      </div>
+      
+
+      <p className='textStyle'>{progress < 100 ? "Loading..." : "Completed!"}</p>
+      </div>
   );
+
 }
 
 export default App;
