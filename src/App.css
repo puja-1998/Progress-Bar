@@ -45,6 +45,7 @@
   left: 50%;
   transform: translate(-50%, -50%); /* Center both horizontally & vertically */
   font-weight: bold;
+  font-size: larger;
   color: brown; /* Ensure visibility */
 }
 .textStyle{
