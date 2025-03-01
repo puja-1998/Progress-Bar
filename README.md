@@ -1,8 +1,8 @@
-## Progress Bar Project Using useEffect 
+# Progress Bar Project Using useEffect 
 
 This is a simple React-based progress bar that visually represents progress from 0% to 100%.
 
-# Features
+## Features
 
 - Progress updates automatically from 0% to 100%
 
@@ -12,13 +12,13 @@ This is a simple React-based progress bar that visually represents progress from
 
 - Styled with CSS for a clean UI
 
-# Technologies Used
+## Technologies Used
 
 - ReactJS
 
 - CSS
 
-# How It Works
+## How It Works
 
 - The progress bar starts at 0% and increases automatically.
 
@@ -26,12 +26,14 @@ This is a simple React-based progress bar that visually represents progress from
 
 - Once it reaches 100%, it displays "Complete".
 
-# Customization
+## Customization
 
 You can modify the speed of progression inside App.js:
 
+```javascript
 setInterval(() => {
   setProgress((prev) => Math.min(prev + 1, 100));
 }, 500); // Change 500 to adjust speed
+```
 
 You can also modify the styles in App.css to change colors, sizes, or animations.
